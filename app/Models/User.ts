@@ -6,7 +6,7 @@ import Account from './Account'
 
 export default class User extends UuidBase {
   @column()
-  public email: string
+  public username: string
 
   @column({ serializeAs: null })
   public password: string

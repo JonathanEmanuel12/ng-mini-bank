@@ -6,9 +6,9 @@ export default class extends BaseSchema {
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.uuid('id').primary()
-      table.string('email', 255).notNullable().unique()
+      table.string('username', 255).notNullable().unique()
       table.string('password', 180).notNullable()
-      table.uuid('account_id').references('id').inTable('users').onDelete('CASCADE')
+      table.uuid('account_id').references('id').inTable('accounts').onDelete('CASCADE')
 
       /**
        * Uses timestampz for PostgreSQL and DATETIME2 for MSSQL
